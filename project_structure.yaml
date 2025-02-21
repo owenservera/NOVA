@@ -1,0 +1,44 @@
+.:
+- .blackboxrules
+- .gitignore
+- download_model.py
+- fine_tune_deepseek.py
+- ps.py
+Data: []
+Data\Data_Infrastructure:
+- data_scale_plan.txt
+Data\Raw_Data:
+- check_formatted.py
+- cleaned_testdata.json
+- dedi.py
+- formatted_testdata.json
+- format_dataset.py
+- testdata.json
+- test_data.csv
+Model: []
+models: []
+models\DeepSeek-R1-Distill-Qwen-1.5B:
+- .gitattributes
+- config.json
+- generation_config.json
+- LICENSE
+- model.safetensors
+- README.md
+- tokenizer.json
+- tokenizer_config.json
+models\DeepSeek-R1-Distill-Qwen-1.5B\.cache: []
+models\DeepSeek-R1-Distill-Qwen-1.5B\.cache\huggingface:
+- .gitignore
+models\DeepSeek-R1-Distill-Qwen-1.5B\.cache\huggingface\download:
+- .gitattributes.metadata
+- config.json.metadata
+- generation_config.json.metadata
+- LICENSE.metadata
+- model.safetensors.metadata
+- README.md.metadata
+- tokenizer.json.metadata
+- tokenizer_config.json.metadata
+models\DeepSeek-R1-Distill-Qwen-1.5B\.cache\huggingface\download\figures:
+- benchmark.jpg.metadata
+models\DeepSeek-R1-Distill-Qwen-1.5B\figures:
+- benchmark.jpg
