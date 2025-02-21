@@ -38,7 +38,7 @@ def tokenize_function(example, tokenizer):
     return tokenizer(example["text"], truncation=True, max_length=2048, padding="max_length")
 
 # Load model and tokenizer
-model_name = "deepseek-model/DeepSeek-R1-Distill-Qwen-1.5B"
+model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype=torch.float16, load_in_4bit=True)
 

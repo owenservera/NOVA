@@ -1,0 +1,73 @@
+# Virtual environment
+.venv/
+venv/
+deepseek-env/
+env/
+# VS Code settings
+.vscode/
+.vscode/settings.json
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+model/
+models/
+# Environment variables and credentials
+.env
+*.env
+config.json
+secrets.json
+
+# Model files and large datasets
+Model/
+deepseek-model/
+DeepSeek-R1-Distill-Qwen-1.5B/
+deepseek-tokenizer/
+Model_Scale/
+Self_Learning/
+Data/
+
+# Logs and cache
+logs/
+*.log
+*.out
+*.err
+*.swp
+*.swo
+*.swn
+*.swd
+.DS_Store
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.manifest
+*.spec
+
+# Testing and coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+
+venv/
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Node.js dependencies (if applicable)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary files
+tmp/
+*.tmp
+*.bak
+
+# Ignore CCC folder (your backup folder)
+CCC/
+deepseek-env/
