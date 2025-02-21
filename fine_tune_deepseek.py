@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Get the absolute path of the project directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Directory of this script
-DATA_PATH = os.path.join(BASE_DIR, "..", "Data", "Raw_Data", "formatted_testdata.json")
+DATA_PATH = os.path.join(BASE_DIR, "Data", "Raw_Data", "formatted_testdata.json")
 
 # Configuration for experimentation
 EXPERIMENT_CONFIG = {
