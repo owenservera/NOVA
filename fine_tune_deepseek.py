@@ -16,7 +16,7 @@ EXPERIMENT_CONFIG = {
     "lora_rank": 4,
     "batch_size": 1,
     "epochs": 1,
-    "gradient_accumulation_steps": 4,
+    "gradient_accumulation_steps": 3,
     "output_dir": f"output_experiment_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
     "dropout": 0.1,
     "weight_decay": 0.01,
