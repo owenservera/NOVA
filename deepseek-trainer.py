@@ -60,38 +60,44 @@ def train():
     logger.info(f"Loading model {MODEL_NAME}")
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
-        torch_dtype=torch.float16,  # Switched to float16 for efficiency
+        torch_dtype=torch.float32,  # Changed for CPU stability
         device_map="auto"
     )
     model.resize_token_embeddings(len(tokenizer))
 
+    # Enable gradient checkpointing to save memory
+    model.gradient_checkpointing_enable()
+
     tokenized_train = train_dataset.map(
         lambda x: tokenize_function(x, tokenizer),
-        remove_columns=train_dataset.column_names
+        remove_columns=train_dataset.column_names,
+        num_proc=2  # Multi-threaded data processing
     )
     tokenized_eval = eval_dataset.map(
         lambda x: tokenize_function(x, tokenizer),
-        remove_columns=eval_dataset.column_names
+        remove_columns=eval_dataset.column_names,
+        num_proc=2
     )
 
     training_args = TrainingArguments(
         output_dir="./results",
-        num_train_epochs=2,  # Reduced from 3 to 2
-        per_device_train_batch_size=4,
-        per_device_eval_batch_size=4,
+        num_train_epochs=2,
+        per_device_train_batch_size=1,  # Reduced batch size for CPU
+        per_device_eval_batch_size=1,
         warmup_steps=500,
         weight_decay=0.01,
         logging_dir="./logs",
-        logging_steps=100,  # Increased from 10 to 100
+        logging_steps=10,  # More frequent logs
         evaluation_strategy="steps",
-        eval_steps=500,  # Increased from 50 to 500
+        eval_steps=500,
         save_strategy="steps",
-        save_steps=500,  # Increased from 50 to 500
+        save_steps=500,
         load_best_model_at_end=True,
         metric_for_best_model="loss",
         greater_is_better=False,
-        bf16=torch.cuda.is_available(),
-        fp16=False
+        bf16=False,  # Disabled for CPU stability
+        fp16=False,
+        use_cache=False  # Disabled cache to save memory
     )
 
     trainer = Trainer(
@@ -99,6 +105,7 @@ def train():
         args=training_args,
         train_dataset=tokenized_train,
         eval_dataset=tokenized_eval,
+        verbose=True  # More detailed logs
     )
 
     logger.info("Starting training...")
