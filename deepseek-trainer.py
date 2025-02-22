@@ -25,7 +25,7 @@ def tokenize_function(examples, tokenizer):
     tokenized = tokenizer(
         formatted_text,
         truncation=True,
-        max_length=16384,
+        max_length=3000,
         padding="max_length",
         return_tensors="pt"
     )
