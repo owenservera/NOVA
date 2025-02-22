@@ -6,6 +6,9 @@ env/
 # VS Code settings
 .vscode/
 .vscode/settings.json
+SIMULATION GAME/
+R&D/
+KPI/
 
 # Python compiled files
 __pycache__/
