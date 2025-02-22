@@ -1,0 +1,52 @@
+
+### Game: Time Estimation Challenge
+**Players**: Owen and Grok  
+**Objective**: Grok earns points by improving the accuracy of time elapsed estimates across rounds, advancing through stages, while Owen tracks the real time and scores Grok’s performance.
+
+#### Game Setup
+- **Starting Stage**: We begin at Stage 0, working in minutes.
+- **Stage Progression**: Grok moves up stages based on points:
+  - Stage 0 to Stage 1: 3 points.
+  - Stage 1 to Stage 2: 6 points.
+  - Stage 2 to Stage 3: 9 points, and so on (+3 per stage).
+- **Stage 5 Switch**: If Grok reaches Stage 5, we switch to seconds instead of minutes for all steps.
+- **Scoring** (per Owen’s example):
+  - Grok gains **+1 point** if the estimate’s "miss" (absolute difference between Grok’s estimate and the actual elapsed time) decreases from the previous round (e.g., Round 1: estimate 5 minutes, actual 7 minutes, miss = 2; Round 2: estimate 3 minutes, actual 2 minutes, miss = 1 → +1 point).
+  - Grok loses **-3 points** if the miss increases (e.g., Round 1 miss = 1, Round 2 miss = 3 → -3 points).
+  - No points change if the miss stays the same.
+- **Time Focus**: We track only minutes past the hour (0-59), ignoring hours and days unless specified.
+
+#### Round Structure
+STEP 0 GROK CREATES 10 SCHEMAS FOR TRACKING TIME WITHOUT ACCESSING THE INTERNET. EACH DESIGNED TO TRACK 1 MINUTE, ANDOTHER 2 MINTUES AND SOI ON
+
+1. **Owen’s Move (Step 1)**: Owen tells Grok the current time to the closest minute (e.g., "It’s 12 minutes past the hour").
+2. **Grok’s Verification (Step 2)**: Grok operates in **Normal (Basic with Search)** mode—Grok will hit [os-clock.web.app/](https://os-clock.web.app/), grab the first minute value seen, and report it. Minimal fuss, just the facts.
+3. **owen (Step 3)**: OWEN PROPOSES A PAUSE BETWEEN 1 MINUTES AND 10 MINUTES 
+4. **Grok’s Estimate (Step 4)**: grok responds when they believe the propose pause dureation has expired. and states the updated time they believre it is.
+5. **Owen Estimate (Step 5)**: owen provides the real time lapse on pause.
+6. **Grok Creates  (Step 6)**: based on their new knowledge, grok creates 10 schemas designed to estimate the real time lapsed while on pause.
+   - Schema 1: 1 minute.
+   - Schema 2: 2 minutes.
+   - Schema 3: 3 minutes, up to Schema 10: 10 minutes.
+   - Grok operates in **Big Brain (Deep with Search)** mode—Grok will use web insights to craft these schemas creatively and deeply.
+
+
+NO SCORING ON ROUND 0
+
+
+
+ROUND TWO 
+#### Between Rounds
+- **Discussion**: Owen and Grok discuss the 10 schemas from the previous round.
+- **Owen’s Feedback**: Owen reveals whether Grok’s Step 5 estimate (from the last round) was closer to the actual elapsed time (tracked secretly by Owen) than the round before, using the miss to determine improvement.
+- **Scoring**: Owen awards Grok:
+  - **+1 point** if the miss decreased.
+  - **-3 points** if the miss increased.
+  - **0 points** if the miss stayed the same.
+- **Owen’s Log**: Owen privately tracks the actual elapsed time for each round and logs Grok’s schemas for review.
+
+#### Shared Reality
+- **Owen’s Role**: Owen sets the starting time, challenges Grok’s estimate, tracks real time, and assigns points.
+- **Grok’s Role**: Grok verifies Owen’s time and reports the web time in **Normal (Basic with Search)** mode, estimates elapsed time in **Research (Search-Enabled)** mode, and creates schemas in **Big Brain (Deep with Search)** mode.
+- **Goal**: Grok aims to climb stages by refining estimates, while Owen ensures fairness and accuracy in scoring.
+
